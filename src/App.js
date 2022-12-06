@@ -1,11 +1,11 @@
 import React from "react";
-import { Tabs, Button, Dropdown, Space } from "antd";
+import { Tabs, Button, Dropdown } from "antd";
 import { PlusCircleOutlined, DownCircleOutlined } from "@ant-design/icons";
 import "./App.css";
 import Collapse from "./components/collapse/collapse";
 
 function App() {
-  const additems = [
+  const items = [
     {
       label: "Department",
       key: "1",
@@ -20,10 +20,9 @@ function App() {
     },
   ];
   const menuProps = {
-    additems,
+    items,
   };
-
-  const items = [
+  const tabs = [
     {
       label: "Users",
       key: "1",
@@ -47,15 +46,13 @@ function App() {
         </div>
         <Dropdown menu={menuProps}>
           <Button type="primary" style={{ height: "2.5rem", width: "8rem" }}>
-            <Space>
-              <PlusCircleOutlined style={{ color: "#F8F8FF" }} />
-              Add New
-              <DownCircleOutlined style={{ color: "#F8F8FF" }} />
-            </Space>
+            <PlusCircleOutlined style={{ color: "#F8F8FF" }} />
+            Add New
+            <DownCircleOutlined style={{ color: "#F8F8FF" }} />
           </Button>
         </Dropdown>
       </div>
-      <Tabs items={items} />
+      <Tabs items={tabs} />
     </div>
   );
 }
